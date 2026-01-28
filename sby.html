@@ -1,0 +1,1825 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biografi Susilo Bambang Yudhoyono</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Source+Sans+Pro:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #1e3a5f;
+      --secondary: #c9a227;
+      --text: #2d3748;
+      --surface: #f8fafc;
+      --accent: #3d5a80;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      background: var(--surface);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    /* Navbar Styles */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(30, 58, 95, 0.95);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+    
+    .navbar.scrolled {
+      background: rgba(30, 58, 95, 0.98);
+      padding: 0.5rem 0;
+    }
+    
+    .nav-link {
+      position: relative;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 80%;
+    }
+    
+    .nav-link.active {
+      color: var(--secondary);
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 100%;
+      background: linear-gradient(135deg, #1e3a5f 0%, #3d5a80 50%, #1e3a5f 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 10;
+    }
+    
+    .hero-image-container {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      margin: 0 auto;
+    }
+    
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--secondary) 0%, #d4af37 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      border: 4px solid rgba(201, 162, 39, 0.3);
+      
+    }
+    
+    .hero-image svg {
+      width: 180px;
+      height: 180px;
+      fill: var(--primary);
+    }
+    
+    .hero-badge {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(201, 162, 39, 0.4);
+    }
+    
+    .hero-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: #fff;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+    
+    .hero-description {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.9);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.8;
+    }
+    
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(201, 162, 39, 0.4);
+    }
+    
+    .hero-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(201, 162, 39, 0.5);
+    }
+    
+    /* Section Styles */
+    .section {
+      padding: 5rem 1.5rem;
+    }
+    
+    .section-dark {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%);
+      color: #fff;
+    }
+    
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      text-align: center;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--secondary);
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      opacity: 0.8;
+    }
+    
+    /* Profile Card */
+    .profile-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .profile-item {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--surface);
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+    
+    .profile-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .profile-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    
+    .profile-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: #fff;
+    }
+    
+    .profile-label {
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+    
+    .profile-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    /* Career Cards */
+    .career-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .career-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .career-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--secondary);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    
+    .career-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--secondary);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .career-icon svg {
+      width: 30px;
+      height: 30px;
+      fill: var(--primary);
+    }
+    
+    .career-title {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
+    
+    .career-list {
+      list-style: none;
+    }
+    
+    .career-list li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    
+    .career-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+    }
+    
+    /* Achievements */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .achievement-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      border-left: 4px solid var(--secondary);
+    }
+    
+    .achievement-card:hover {
+      transform: translateX(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+    
+    .achievement-icon {
+      width: 45px;
+      height: 45px;
+      min-width: 45px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .achievement-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
+    }
+    
+    .achievement-content h4 {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: var(--primary);
+    }
+    
+    .achievement-content p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.5;
+    }
+    
+    /* Timeline */
+    .timeline {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--secondary), var(--primary));
+      transform: translateX(-50%);
+    }
+    
+    .timeline-item {
+      display: flex;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    
+    .timeline-item:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+    
+    .timeline-content {
+      width: calc(50% - 30px);
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .timeline-content:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      background: var(--secondary);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      border: 4px solid #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+    
+    .timeline-year {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .timeline-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    .timeline-desc {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .gallery-item {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+    
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.7));
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 5;
+    }
+    
+    .gallery-item:hover::before {
+      opacity: 1;
+    }
+    
+    .gallery-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+    }
+    
+    .gallery-placeholder svg {
+      width: 60px;
+      height: 60px;
+      fill: currentColor;
+      margin-bottom: 0.5rem;
+    }
+    
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      color: #fff;
+      transform: translateY(100%);
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+      transform: translateY(0);
+    }
+    
+    .gallery-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    
+    .gallery-desc {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+    
+    /* Facts */
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .fact-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+    
+    .fact-card:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-5px);
+      border-color: var(--secondary);
+    }
+    
+    .fact-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--secondary);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.5rem;
+    }
+    
+    .fact-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+    
+    .fact-desc {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      line-height: 1.6;
+    }
+    
+    /* Quotes */
+    .quotes-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .quote-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .quote-icon {
+      position: absolute;
+      top: -15px;
+      left: 30px;
+      font-size: 4rem;
+      color: var(--secondary);
+      opacity: 0.3;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    
+    .quote-text {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 5;
+    }
+    
+    .quote-author {
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    /* Contact Form */
+    .contact-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .contact-form {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .form-input::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: var(--secondary);
+      background: rgba(255,255,255,0.15);
+    }
+    
+    .form-textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .form-btn {
+      width: 100%;
+      padding: 1rem 2rem;
+      background: var(--secondary);
+      color: var(--primary);
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .form-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(201, 162, 39, 0.4);
+    }
+    
+    /* Footer */
+    .footer {
+      background: #0d1b2a;
+      color: rgba(255,255,255,0.8);
+      padding: 3rem 1.5rem 1.5rem;
+      text-align: center;
+    }
+    
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+    
+    .footer-text {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--secondary);
+    }
+    
+    .footer-copyright {
+      font-size: 0.85rem;
+      opacity: 0.5;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(201, 162, 39, 0.4);
+      z-index: 999;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      transform: translateY(-5px);
+    }
+    
+    .back-to-top svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--primary);
+    }
+    
+    /* Modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      padding: 2rem;
+    }
+    
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .modal-content {
+      max-width: 800px;
+      width: 100%;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      transform: scale(0.9);
+      transition: all 0.3s ease;
+    }
+    
+    .modal.active .modal-content {
+      transform: scale(1);
+    }
+    
+    .modal-image{
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .modal-image img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .modal-image svg {
+      width: 80px;
+      height: 80px;
+      fill: currentColor;
+    }
+    
+    .modal-info {
+      padding: 1.5rem;
+    }
+    
+    .modal-title {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .modal-desc {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 45px;
+      height: 45px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .modal-close:hover {
+      transform: rotate(90deg);
+    }
+    
+    .modal-close svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--primary);
+    }
+    
+    /* Scroll Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 5px;
+    }
+    
+    .mobile-menu-btn span {
+      width: 25px;
+      height: 2px;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: flex;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 1rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .nav-link {
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      
+      .timeline::before {
+        left: 20px;
+      }
+      
+      .timeline-item,
+      .timeline-item:nth-child(odd) {
+        flex-direction: row;
+        padding-left: 50px;
+      }
+      
+      .timeline-content {
+        width: 100%;
+      }
+      
+      .timeline-dot {
+        left: 20px;
+      }
+      
+      .hero-image-container {
+        width: 200px;
+        height: 200px;
+      }
+    }
+    
+    /* Toast Message */
+    .toast {
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--primary);
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 3000;
+    }
+    
+    .toast.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+     .gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+  </style>
+ </head>
+ <body class="h-full">
+  <div id="app" class="w-full h-full overflow-auto"><!-- Navbar -->
+   <nav class="navbar" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"><a href="#beranda" class="text-xl font-bold text-white" style="font-family: 'Playfair Display', serif;"> <span style="color: var(--secondary);">SBY</span> Biografi </a>
+     <div class="mobile-menu-btn" id="mobileMenuBtn"><span></span> <span></span> <span></span>
+     </div>
+     <div class="nav-links flex items-center gap-1" id="navLinks"><a href="#beranda" class="nav-link active">Beranda</a> <a href="#profil" class="nav-link">Profil</a> <a href="#karier" class="nav-link">Karier</a> <a href="#prestasi" class="nav-link">Prestasi</a> <a href="#timeline" class="nav-link">Timeline</a> <a href="#galeri" class="nav-link">Galeri</a> <a href="#fakta" class="nav-link">Fakta</a> <a href="#kontak" class="nav-link">Kontak</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section id="beranda" class="hero">
+    <div class="hero-content text-center w-full px-4 py-12">
+     <div class="hero-image-container reveal">
+      <div class="hero-image">
+  <img src="img/IMG_20260128_102555.jpg" alt="Susilo Bambang Yudhoyono" class="w-full h-full object-cover rounded-full">
+</div>
+
+      <div class="hero-badge">
+       Presiden RI ke-6
+      </div>
+     </div>
+     <h1 class="hero-title reveal" id="heroTitle">Susilo Bambang Yudhoyono</h1>
+     <p class="hero-subtitle reveal" id="heroSubtitle">PRESIDEN REPUBLIK INDONESIA 2004-2014</p>
+     <p class="hero-description reveal">Pemimpin yang membawa Indonesia melewati berbagai tantangan dengan kepemimpinan yang tenang, demokratis, dan penuh integritas. Sosok jenderal yang menjadi negarawan.</p><a href="#profil" class="hero-btn reveal"> <span>Jelajahi Biografi</span>
+      <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor">
+       <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" />
+      </svg></a>
+    </div>
+   </section><!-- Profile Section -->
+   <section id="profil" class="section">
+    <h2 class="section-title reveal">Profil Singkat</h2>
+    <p class="section-subtitle reveal">Mengenal lebih dekat Presiden keenam Republik Indonesia</p>
+    <div class="profile-card reveal">
+     <div class="profile-grid">
+      <div class="profile-item">
+       <div class="profile-icon">
+        <svg viewbox="0 0 24 24">
+         <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+        </svg>
+       </div>
+       <div class="profile-label">
+        Nama Lengkap
+       </div>
+       <div class="profile-value">
+        Jenderal TNI (Purn.) Prof. Dr. H. Susilo Bambang Yudhoyono, M.A.
+       </div>
+      </div>
+      <div class="profile-item">
+       <div class="profile-icon">
+        <svg viewbox="0 0 24 24">
+         <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z" />
+        </svg>
+       </div>
+       <div class="profile-label">
+        Tanggal Lahir
+       </div>
+       <div class="profile-value">
+        9 September 1949<br>
+        Pacitan, Jawa Timur
+       </div>
+      </div>
+      <div class="profile-item">
+       <div class="profile-icon">
+        <svg viewbox="0 0 24 24">
+         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+        </svg>
+       </div>
+       <div class="profile-label">
+        Periode Jabatan
+       </div>
+       <div class="profile-value">
+        20 Oktober 2004 -<br>
+        20 Oktober 2014
+       </div>
+      </div>
+      <div class="profile-item">
+       <div class="profile-icon">
+        <svg viewbox="0 0 24 24">
+         <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22L14 6z" />
+        </svg>
+       </div>
+       <div class="profile-label">
+        Partai Politik
+       </div>
+       <div class="profile-value">
+        Partai Demokrat<br>
+        (Ketua Umum)
+       </div>
+      </div>
+      <div class="profile-item">
+       <div class="profile-icon">
+        <svg viewbox="0 0 24 24">
+         <path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z" />
+        </svg>
+       </div>
+       <div class="profile-label">
+        Pasangan
+       </div>
+       <div class="profile-value">
+        Kristiani Herrawati<br>
+        (Ani Yudhoyono) ✝
+       </div>
+      </div>
+      <div class="profile-item">
+       <div class="profile-icon">
+        <svg viewbox="0 0 24 24">
+         <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z" />
+        </svg>
+       </div>
+       <div class="profile-label">
+        Pangkat Militer
+       </div>
+       <div class="profile-value">
+        Jenderal TNI<br>
+        (Purnawirawan)
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Career Section -->
+   <section id="karier" class="section section-dark">
+    <h2 class="section-title reveal" style="color: #fff;">Perjalanan Karier</h2>
+    <p class="section-subtitle reveal">Dari militer hingga kursi kepresidenan</p>
+    <div class="career-grid">
+     <div class="career-card reveal">
+      <div class="career-icon">
+       <svg viewbox="0 0 24 24">
+        <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
+       </svg>
+      </div>
+      <h3 class="career-title">Pendidikan</h3>
+      <ul class="career-list">
+       <li>Akademi Angkatan Bersenjata RI (1973)</li>
+       <li>American Language Course, Texas, AS</li>
+       <li>Airborne &amp; Ranger Course, Fort Benning, AS</li>
+       <li>Master in Management, Webster University</li>
+       <li>Doktor Ekonomi Pertanian, IPB (2004)</li>
+      </ul>
+     </div>
+     <div class="career-card reveal">
+      <div class="career-icon">
+       <svg viewbox="0 0 24 24">
+        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
+       </svg>
+      </div>
+      <h3 class="career-title">Karier Militer</h3>
+      <ul class="career-list">
+       <li>Komandan Batalyon Infanteri 744 (1988)</li>
+       <li>Komandan Brigade Infanteri 17 Kostrad</li>
+       <li>Panglima Kodam II/Sriwijaya</li>
+       <li>Kepala Staf Teritorial ABRI (1998)</li>
+       <li>Pangkostrad (1999-2000)</li>
+      </ul>
+     </div>
+     <div class="career-card reveal">
+      <div class="career-icon">
+       <svg viewbox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+       </svg>
+      </div>
+      <h3 class="career-title">Karier Politik</h3>
+      <ul class="career-list">
+       <li>Menteri Pertambangan &amp; Energi (1999)</li>
+       <li>Menkopolkam (2000-2001)</li>
+       <li>Pendiri Partai Demokrat (2001)</li>
+       <li>Presiden RI ke-6 (2004-2009)</li>
+       <li>Presiden RI Periode II (2009-2014)</li>
+      </ul>
+     </div>
+    </div>
+   </section><!-- Achievements Section -->
+   <section id="prestasi" class="section">
+    <h2 class="section-title reveal">Prestasi &amp; Kebijakan</h2>
+    <p class="section-subtitle reveal">Pencapaian penting selama masa kepemimpinan</p>
+    <div class="achievements-grid">
+     <div class="achievement-card reveal">
+      <div class="achievement-icon">
+       <svg viewbox="0 0 24 24">
+        <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
+       </svg>
+      </div>
+      <div class="achievement-content">
+       <h4>Pemberantasan Korupsi</h4>
+       <p>Memperkuat KPK dan mendukung pemberantasan korupsi secara sistematis</p>
+      </div>
+     </div>
+     <div class="achievement-card reveal">
+      <div class="achievement-icon">
+       <svg viewbox="0 0 24 24">
+        <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z" />
+       </svg>
+      </div>
+      <div class="achievement-content">
+       <h4>Stabilitas Ekonomi</h4>
+       <p>Menjaga pertumbuhan ekonomi rata-rata 6% per tahun selama dua periode</p>
+      </div>
+     </div>
+     <div class="achievement-card reveal">
+      <div class="achievement-icon">
+       <svg viewbox="0 0 24 24">
+        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+       </svg>
+      </div>
+      <div class="achievement-content">
+       <h4>Perdamaian Aceh</h4>
+       <p>Berhasil mencapai perdamaian Helsinki dengan GAM pada 2005</p>
+      </div>
+     </div>
+     <div class="achievement-card reveal">
+      <div class="achievement-icon">
+       <svg viewbox="0 0 24 24">
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
+       </svg>
+      </div>
+      <div class="achievement-content">
+       <h4>Pengurangan Kemiskinan</h4>
+       <p>Menurunkan angka kemiskinan dari 16,7% menjadi 11,3%</p>
+      </div>
+     </div>
+     <div class="achievement-card reveal">
+      <div class="achievement-icon">
+       <svg viewbox="0 0 24 24">
+        <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
+       </svg>
+      </div>
+      <div class="achievement-content">
+       <h4>BOS &amp; Pendidikan Gratis</h4>
+       <p>Program Bantuan Operasional Sekolah untuk pendidikan dasar</p>
+      </div>
+     </div>
+     <div class="achievement-card reveal">
+      <div class="achievement-icon">
+       <svg viewbox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+       </svg>
+      </div>
+      <div class="achievement-content">
+       <h4>Diplomasi Internasional</h4>
+       <p>Meningkatkan peran Indonesia di G20 dan forum internasional</p>
+      </div>
+     </div>
+     <div class="achievement-card reveal">
+      <div class="achievement-icon">
+       <svg viewbox="0 0 24 24">
+        <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z" />
+       </svg>
+      </div>
+      <div class="achievement-content">
+       <h4>Pemilu Demokratis</h4>
+       <p>Presiden pertama yang dipilih langsung oleh rakyat</p>
+      </div>
+     </div>
+     <div class="achievement-card reveal">
+      <div class="achievement-icon">
+       <svg viewbox="0 0 24 24">
+        <path d="M12 3v9.28c-.47-.17-.97-.28-1.5-.28C8.01 12 6 14.01 6 16.5S8.01 21 10.5 21c2.31 0 4.2-1.75 4.45-4H15V6h4V3h-7z" />
+       </svg>
+      </div>
+      <div class="achievement-content">
+       <h4>Seniman &amp; Musisi</h4>
+       <p>Dikenal sebagai presiden yang berbakat musik dan sastra</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Timeline Section -->
+   <section id="timeline" class="section" style="background: linear-gradient(180deg, #f0f4f8 0%, #fff 100%);">
+    <h2 class="section-title reveal">Perjalanan Hidup</h2>
+    <p class="section-subtitle reveal">Timeline kehidupan dan kepemimpinan</p>
+    <div class="timeline">
+     <div class="timeline-item reveal">
+      <div class="timeline-content"><span class="timeline-year">1949</span>
+       <h4 class="timeline-title">Kelahiran</h4>
+       <p class="timeline-desc">Lahir di Pacitan, Jawa Timur pada 9 September 1949 dari keluarga sederhana.</p>
+      </div>
+      <div class="timeline-dot"></div>
+     </div>
+     <div class="timeline-item reveal">
+      <div class="timeline-content"><span class="timeline-year">1973</span>
+       <h4 class="timeline-title">Lulus AKABRI</h4>
+       <p class="timeline-desc">Menyelesaikan pendidikan di Akademi Angkatan Bersenjata dan memulai karier militer.</p>
+      </div>
+      <div class="timeline-dot"></div>
+     </div>
+     <div class="timeline-item reveal">
+      <div class="timeline-content"><span class="timeline-year">1976</span>
+       <h4 class="timeline-title">Menikah</h4>
+       <p class="timeline-desc">Menikah dengan Kristiani Herrawati (Ani Yudhoyono) dan dikaruniai dua putra.</p>
+      </div>
+      <div class="timeline-dot"></div>
+     </div>
+     <div class="timeline-item reveal">
+      <div class="timeline-content"><span class="timeline-year">1999</span>
+       <h4 class="timeline-title">Masuk Kabinet</h4>
+       <p class="timeline-desc">Menjadi Menteri Pertambangan dan Energi era Presiden Abdurrahman Wahid.</p>
+      </div>
+      <div class="timeline-dot"></div>
+     </div>
+     <div class="timeline-item reveal">
+      <div class="timeline-content"><span class="timeline-year">2001</span>
+       <h4 class="timeline-title">Partai Demokrat</h4>
+       <p class="timeline-desc">Mendirikan Partai Demokrat sebagai kendaraan politik menuju kursi presiden.</p>
+      </div>
+      <div class="timeline-dot"></div>
+     </div>
+     <div class="timeline-item reveal">
+      <div class="timeline-content"><span class="timeline-year">2004</span>
+       <h4 class="timeline-title">Presiden RI ke-6</h4>
+       <p class="timeline-desc">Memenangkan pemilu presiden langsung pertama dan dilantik sebagai Presiden RI.</p>
+      </div>
+      <div class="timeline-dot"></div>
+     </div>
+     <div class="timeline-item reveal">
+      <div class="timeline-content"><span class="timeline-year">2009</span>
+       <h4 class="timeline-title">Terpilih Kembali</h4>
+       <p class="timeline-desc">Memenangkan pemilu dengan perolehan suara 60,8% dan memimpin periode kedua.</p>
+      </div>
+      <div class="timeline-dot"></div>
+     </div>
+     <div class="timeline-item reveal">
+      <div class="timeline-content"><span class="timeline-year">2014</span>
+       <h4 class="timeline-title">Akhir Masa Jabatan</h4>
+       <p class="timeline-desc">Menyelesaikan dua periode kepresidenan dan aktif di berbagai kegiatan internasional.</p>
+      </div>
+      <div class="timeline-dot"></div>
+     </div>
+     <div class="timeline-item reveal">
+      <div class="timeline-content"><span class="timeline-year">2019</span>
+       <h4 class="timeline-title">Kepergian Ani Yudhoyono</h4>
+       <p class="timeline-desc">Istri tercinta, Ani Yudhoyono, wafat setelah berjuang melawan kanker darah.</p>
+      </div>
+      <div class="timeline-dot"></div>
+     </div>
+    </div>
+   </section><!-- Gallery Section -->
+   <section id="galeri" class="section">
+    <h2 class="section-title reveal">Galeri Foto</h2>
+    <p class="section-subtitle reveal">Momen-momen bersejarah dalam perjalanan karier</p>
+    <div class="gallery-grid">
+     <div class="gallery-item reveal" data-title="Pelantikan 2004" data-desc="Dilantik sebagai Presiden RI ke-6 di Gedung MPR/DPR">
+  
+  <img src="img/Pelantikan_Susilo_Bambang_Yudoyono,_2004.jpg" alt="Pelantikan Presiden SBY 2004" class="gallery-img">
+  <div class="gallery-overlay">
+    <h4 class="gallery-title">Pelantikan 2004</h4>
+    <p class="gallery-desc">Momen bersejarah</p>
+  </div>
+</div>
+<div class="gallery-item reveal" data-title="Perdamaian Aceh" data-desc="Perjanjian Helsinki 2005 dengan GAM">
+  
+  <img src="img/Perjanjian_damai_helsinki.jpg" alt="Perdamaian Aceh" class="gallery-img">
+
+  <div class="gallery-overlay">
+    <h4 class="gallery-title">Perdamaian Aceh</h4>
+    <p class="gallery-desc">Prestasi Diplomasi</p>
+  </div>
+</div>
+<div class="gallery-item reveal" data-title="KTT G20" data-desc="Memimpin delegasi Indonesia di forum G20">
+  
+  <img src="img/FotobersamaG20-abror-190612-1.jpg" alt="KTT G20" class="gallery-img">
+
+  <div class="gallery-overlay">
+    <h4 class="gallery-title">KTT G20</h4>
+    <p class="gallery-desc">Diplomasi Internasional</p>
+  </div>
+</div>
+<div class="gallery-item reveal" data-title="Bersama Keluarga" data-desc="Foto dengan keluarga besar">
+  
+  <img src="img/keluarga_sby-20160705-004-rita.jpg" alt="Bersama Keluarga" class="gallery-img">
+
+  <div class="gallery-overlay">
+    <h4 class="gallery-title">Bersama Keluarga</h4>
+    <p class="gallery-desc">Foto keluarga</p>
+  </div>
+</div>
+    <div class="gallery-item reveal" data-title="Bermain Musik" data-desc="Menunjukan bakat musikal di berbagai kesempatan">
+  
+  <img src="img/images.jpg" alt="Bermain Musik" class="gallery-img">
+
+  <div class="gallery-overlay">
+    <h4 class="gallery-title">Bermain Musik</h4>
+    <p class="gallery-desc">Sisi artistik</p>
+  </div>
+</div>
+<div class="gallery-item reveal" data-title="Wisuda Doktor" data-desc="Memperoleh gelar doktor honoris Causa">
+  
+  <img src="img/sby3.jpg" alt="Wisuda Doktor" class="gallery-img">
+
+  <div class="gallery-overlay">
+    <h4 class="gallery-title">Wisuda Doktor</h4>
+    <p class="gallery-desc">Pencapaian Akademis</p>
+  </div>
+</div>
+    </div>
+   </section><!-- Facts Section -->
+   <section id="fakta" class="section section-dark">
+    <h2 class="section-title reveal" style="color: #fff;">Fakta Menarik</h2>
+    <p class="section-subtitle reveal">Hal-hal unik yang mungkin belum Anda ketahui</p>
+    <div class="facts-grid">
+     <div class="fact-card reveal">
+      <div class="fact-number">
+       01
+      </div>
+      <h4 class="fact-title">Penulis Lagu</h4>
+      <p class="fact-desc">SBY menulis lebih dari 20 lagu, termasuk "Pelangi di Matamu" yang populer dinyanyikan oleh Jamrud.</p>
+     </div>
+     <div class="fact-card reveal">
+      <div class="fact-number">
+       02
+      </div>
+      <h4 class="fact-title">Lulusan Terbaik</h4>
+      <p class="fact-desc">Lulus sebagai lulusan terbaik di AKABRI tahun 1973 dengan predikat Adhi Makayasa.</p>
+     </div>
+     <div class="fact-card reveal">
+      <div class="fact-number">
+       03
+      </div>
+      <h4 class="fact-title">Poliglot</h4>
+      <p class="fact-desc">Fasih berbahasa Inggris dan sering memberikan pidato internasional tanpa juru bahasa.</p>
+     </div>
+     <div class="fact-card reveal">
+      <div class="fact-number">
+       04
+      </div>
+      <h4 class="fact-title">Penulis Buku</h4>
+      <p class="fact-desc">Menulis beberapa buku termasuk "Transforming Indonesia" dan "Selalu Ada Pilihan".</p>
+     </div>
+     <div class="fact-card reveal">
+      <div class="fact-number">
+       05
+      </div>
+      <h4 class="fact-title">Tiga Gelar Akademik</h4>
+      <p class="fact-desc">Meraih gelar Sarjana, Master (AS), dan Doktor dari universitas terkemuka.</p>
+     </div>
+     <div class="fact-card reveal">
+      <div class="fact-number">
+       06
+      </div>
+      <h4 class="fact-title">Pelatihan Militer AS</h4>
+      <p class="fact-desc">Mengikuti pelatihan khusus Ranger dan Airborne di Fort Benning, Amerika Serikat.</p>
+     </div>
+    </div>
+   </section><!-- Quotes Section -->
+   <section class="section" style="background: linear-gradient(180deg, #fff 0%, #f0f4f8 100%);">
+    <h2 class="section-title reveal">Kutipan Inspiratif</h2>
+    <p class="section-subtitle reveal">Kata-kata bijak dari SBY</p>
+    <div class="quotes-container">
+     <div class="quote-card reveal">
+      <div class="quote-icon">
+       "
+      </div>
+      <p class="quote-text">Demokrasi bukan sekadar kebebasan berbicara, tetapi juga kebebasan setelah berbicara.</p>
+      <p class="quote-author">— Susilo Bambang Yudhoyono</p>
+     </div>
+     <div class="quote-card reveal">
+      <div class="quote-icon">
+       "
+      </div>
+      <p class="quote-text">Kita harus berani mengambil keputusan, meskipun keputusan itu tidak populer. Pemimpin tidak boleh hanya mencari popularitas.</p>
+      <p class="quote-author">— Susilo Bambang Yudhoyono</p>
+     </div>
+     <div class="quote-card reveal">
+      <div class="quote-icon">
+       "
+      </div>
+      <p class="quote-text">Indonesia adalah negara besar. Kita tidak boleh menjadi negara yang kerdil dalam pikiran dan tindakan.</p>
+      <p class="quote-author">— Susilo Bambang Yudhoyono</p>
+     </div>
+     <div class="quote-card reveal">
+      <div class="quote-icon">
+       "
+      </div>
+      <p class="quote-text">Kepemimpinan yang baik adalah yang mampu mendengarkan suara rakyat, bukan hanya berbicara kepada rakyat.</p>
+      <p class="quote-author">— Susilo Bambang Yudhoyono</p>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="kontak" class="section section-dark">
+    <h2 class="section-title reveal" style="color: #fff;">Hubungi Kami</h2>
+    <p class="section-subtitle reveal">Kirimkan pesan atau saran Anda</p>
+    <div class="contact-container">
+     <form class="contact-form reveal" id="contactForm">
+      <div class="form-group"><label class="form-label" for="nama">Nama Lengkap</label> <input type="text" id="nama" name="nama" class="form-input" placeholder="Masukkan nama Anda" required>
+      </div>
+      <div class="form-group"><label class="form-label" for="email">Alamat Email</label> <input type="email" id="email" name="email" class="form-input" placeholder="Masukkan email Anda" required>
+      </div>
+      <div class="form-group"><label class="form-label" for="pesan">Pesan</label> <textarea id="pesan" name="pesan" class="form-input form-textarea" placeholder="Tulis pesan Anda di sini..." required></textarea>
+      </div><button type="submit" class="form-btn"> Kirim Pesan </button>
+     </form>
+    </div>
+   </section><!-- Footer -->
+   <footer class="footer">
+    <div class="footer-logo">
+     SBY Biografi
+    </div>
+    <p class="footer-text" id="footerText">Website biografi Presiden Susilo Bambang Yudhoyono</p>
+    <div class="footer-links"><a href="#beranda">Beranda</a> <a href="#profil">Profil</a> <a href="#karier">Karier</a> <a href="#prestasi">Prestasi</a> <a href="#timeline">Timeline</a> <a href="#galeri">Galeri</a> <a href="#fakta">Fakta</a> <a href="#kontak">Kontak</a>
+    </div>
+    <p class="footer-copyright">© 2024 Biografi SBY. Dibuat untuk tujuan edukasi.</p>
+   </footer><!-- Back to Top Button -->
+   <div class="back-to-top" id="backToTop">
+    <svg viewbox="0 0 24 24">
+     <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+    </svg>
+   </div><!-- Modal -->
+   <div class="modal" id="galleryModal">
+    <div class="modal-close" id="modalClose">
+     <svg viewbox="0 0 24 24">
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+     </svg>
+    </div>
+    <div class="modal-content">
+     <div class="modal-image">
+      <img id="modalImg" src="" alt="Foto Galeri">
+     </div>
+     <div class="modal-info">
+      <h3 class="modal-title" id="modalTitle">Judul Foto</h3>
+      <p class="modal-desc" id="modalDesc">Deskripsi foto</p>
+     </div>
+    </div>
+   </div><!-- Toast Message -->
+   <div class="toast" id="toast">
+    Pesan berhasil dikirim!
+   </div>
+  </div>
+  <script>
+    // Default configuration
+    const defaultConfig = {
+      hero_title: 'Susilo Bambang Yudhoyono',
+      hero_subtitle: 'PRESIDEN REPUBLIK INDONESIA 2004-2014',
+      footer_text: 'Website biografi Presiden Susilo Bambang Yudhoyono',
+      primary_color: '#1e3a5f',
+      secondary_color: '#c9a227',
+      text_color: '#2d3748',
+      surface_color: '#f8fafc',
+      accent_color: '#3d5a80',
+      font_family: 'Source Sans Pro',
+      font_size: 16
+    };
+    
+    let config = { ...defaultConfig };
+    
+    // Initialize Element SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (newConfig) => {
+          config = { ...defaultConfig, ...newConfig };
+          applyConfig();
+        },
+        mapToCapabilities: (cfg) => ({
+          recolorables: [
+            {
+              get: () => cfg.primary_color || defaultConfig.primary_color,
+              set: (value) => {
+                config.primary_color = value;
+                window.elementSdk.setConfig({ primary_color: value });
+              }
+            },
+            {
+              get: () => cfg.secondary_color || defaultConfig.secondary_color,
+              set: (value) => {
+                config.secondary_color = value;
+                window.elementSdk.setConfig({ secondary_color: value });
+              }
+            },
+            {
+              get: () => cfg.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => cfg.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            },
+            {
+              get: () => cfg.accent_color || defaultConfig.accent_color,
+              set: (value) => {
+                config.accent_color = value;
+                window.elementSdk.setConfig({ accent_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => cfg.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => cfg.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (cfg) => new Map([
+          ['hero_title', cfg.hero_title || defaultConfig.hero_title],
+          ['hero_subtitle', cfg.hero_subtitle || defaultConfig.hero_subtitle],
+          ['footer_text', cfg.footer_text || defaultConfig.footer_text]
+        ])
+      });
+    }
+    
+    function applyConfig() {
+      const heroTitle = document.getElementById('heroTitle');
+      const heroSubtitle = document.getElementById('heroSubtitle');
+      const footerText = document.getElementById('footerText');
+      
+      if (heroTitle) heroTitle.textContent = config.hero_title || defaultConfig.hero_title;
+      if (heroSubtitle) heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+      if (footerText) footerText.textContent = config.footer_text || defaultConfig.footer_text;
+      
+      // Apply colors
+      const root = document.documentElement;
+      root.style.setProperty('--primary', config.primary_color || defaultConfig.primary_color);
+      root.style.setProperty('--secondary', config.secondary_color || defaultConfig.secondary_color);
+      root.style.setProperty('--text', config.text_color || defaultConfig.text_color);
+      root.style.setProperty('--surface', config.surface_color || defaultConfig.surface_color);
+      root.style.setProperty('--accent', config.accent_color || defaultConfig.accent_color);
+      
+      // Apply font
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      document.body.style.fontFamily = `${fontFamily}, sans-serif`;
+      
+      // Apply font size
+      const baseSize = config.font_size || defaultConfig.font_size;
+      document.body.style.fontSize = `${baseSize}px`;
+    }
+    
+    // DOM Elements
+    const navbar = document.getElementById('navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinksContainer = document.getElementById('navLinks');
+    const backToTop = document.getElementById('backToTop');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const modal = document.getElementById('galleryModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalImg = document.getElementById('modalImg');
+    const contactForm = document.getElementById('contactForm');
+    const toast = document.getElementById('toast');
+    const reveals = document.querySelectorAll('.reveal');
+
+    galleryItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const title = item.dataset.title;
+    const desc = item.dataset.desc;
+    const img = item.querySelector('img').src; // ambil gambar dari galeri
+
+    modalTitle.textContent = title;
+    modalDesc.textContent = desc;
+    modalImg.src = img; // tampilkan di modal
+
+    modal.classList.add('active');
+  });
+});
+
+    
+    // Scroll handler for navbar and back to top
+    const appContainer = document.getElementById('app');
+    appContainer.addEventListener('scroll', () => {
+      const scrollTop = appContainer.scrollTop;
+      
+      // Navbar scroll effect
+      if (scrollTop > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+      
+      // Back to top visibility
+      if (scrollTop > 500) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+      
+      // Active nav link
+      const sections = document.querySelectorAll('section[id]');
+      let currentSection = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (scrollTop >= sectionTop) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+          link.classList.add('active');
+        }
+      });
+      
+      // Reveal animations
+      reveals.forEach(reveal => {
+        const revealTop = reveal.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (revealTop < windowHeight - 100) {
+          reveal.classList.add('active');
+        }
+      });
+    });
+    
+    // Trigger initial scroll check
+    setTimeout(() => {
+      appContainer.dispatchEvent(new Event('scroll'));
+    }, 100);
+    
+    // Smooth scroll for nav links
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+          const offsetTop = targetSection.offsetTop - 80;
+          appContainer.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+        
+        // Close mobile menu
+        navLinksContainer.classList.remove('active');
+      });
+    });
+    
+    // Mobile menu toggle
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinksContainer.classList.toggle('active');
+    });
+    
+    // Back to top click
+    backToTop.addEventListener('click', () => {
+      appContainer.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Gallery modal
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const title = item.getAttribute('data-title');
+        const desc = item.getAttribute('data-desc');
+        
+        modalTitle.textContent = title;
+        modalDesc.textContent = desc;
+        modal.classList.add('active');
+      });
+    });
+    
+    // Close modal
+    modalClose.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+    
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+    
+    // Contact form
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Show toast
+      toast.classList.add('active');
+      
+      // Reset form
+      contactForm.reset();
+      
+      // Hide toast after 3 seconds
+      setTimeout(() => {
+        toast.classList.remove('active');
+      }, 3000);
+    });
+    
+    // Keyboard support for modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+    
+    // Apply initial config
+    applyConfig();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c4c1bfe27a2fdc1',t:'MTc2OTU1NzM3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
